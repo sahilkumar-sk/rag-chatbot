@@ -1,0 +1,7 @@
+# Create this file in your project root
+.env
+faiss_index/
+venv/
+__pycache__/
+*.pyc
+data/
