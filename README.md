@@ -192,55 +192,6 @@ The LLM never sees your full document — only the relevant chunks. This makes i
 
 ---
 
-## 🎯 Interview Q&A
-
-**Q: What is RAG?**
-Retrieval-Augmented Generation — retrieving relevant context from a knowledge base before generating an answer. Prevents hallucination and makes responses traceable.
-
-**Q: Why not fine-tune instead?**
-Fine-tuning is expensive, slow to update, and doesn't cite sources. RAG is cheaper, updatable in real-time, and every answer can be traced to a source document.
-
-**Q: What is chunking and why does it matter?**
-Splitting documents into smaller pieces so each embedding captures focused meaning. Chunk size (800 chars) affects retrieval quality vs context window cost.
-
-**Q: FAISS vs Pinecone?**
-FAISS = local, free, in-memory, not persistent across restarts without saving. Pinecone = cloud, managed, persistent, scales to billions of vectors.
-
-**Q: How do you prevent hallucinations?**
-Ground answers in retrieved context, set temperature=0, and explicitly instruct the model to say it doesn't know if context is insufficient.
-
----
-
-## 📝 Resume Bullet Points
-
-```
-• Built a multimodal RAG chatbot with LangChain + Groq (Llama 3.1) that ingests
-  multi-PDF documents and answers questions grounded in document context with
-  source citations, deployed via Streamlit.
-
-• Implemented semantic search using FAISS and HuggingFace sentence-transformers
-  for efficient local vector retrieval with no API costs.
-
-• Added multimodal inputs: voice transcription via Groq Whisper and image analysis
-  via Llama 4 Vision, with streaming responses and PDF conversation export.
-
-• Architected clean modular codebase (ingest, llm, audio, vision, export modules)
-  with smart onboarding — AI-generated document summaries and suggested questions
-  on upload.
-```
-
----
-
-## 🔮 What's Next
-
-- [ ] Deploy to Render.com (free tier)
-- [ ] Add Pinecone for persistent cloud vector storage
-- [ ] Hybrid search (BM25 + vector)
-- [ ] RAGAs evaluation metrics
-- [ ] FastAPI backend for API access
-
----
-
 ## 📄 License
 
 MIT License — feel free to use and modify.
